@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 300px;
+        padding: 16px;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+      }
+      
+      .container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      
+      h1 {
+        margin: 0 0 16px 0;
+        font-size: 18px;
+        color: #212121;
+      }
+      
+      .status-section {
+        margin-bottom: 20px;
+      }
+      
+      .status-label {
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: block;
+      }
+      
+      .toggle-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .toggle-switch {
+        position: relative;
+        width: 50px;
+        height: 28px;
+        background-color: #ccc;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        border: none;
+        padding: 0;
+      }
+      
+      .toggle-switch.active {
+        background-color: #4CAF50;
+      }
+      
+      .toggle-switch::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        transition: left 0.3s;
+      }
+      
+      .toggle-switch.active::after {
+        left: 24px;
+      }
+      
+      .status-text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #212121;
+      }
+      
+      .status-text.enabled {
+        color: #4CAF50;
+      }
+      
+      .status-text.disabled {
+        color: #f44336;
+      }
+      
+      .info-text {
+        font-size: 12px;
+        color: #999;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>YT Focus</h1>
+      
+      <div class="status-section">
+        <label class="status-label">Extension Status</label>
+        <div class="toggle-container">
+          <span class="status-text" id="statusText">Loading...</span>
+          <button class="toggle-switch" id="toggleButton" aria-label="Toggle extension"></button>
+        </div>
+      </div>
+      
+      <div class="info-text">
+        This extension removes YouTube Shorts from YouTube to help you stay focused.
+      </div>
+    </div>
+    
+    <script src="popup.js"></script>
+  </body>
+</html>
