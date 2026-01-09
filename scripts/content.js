@@ -7,7 +7,6 @@ const observerCallback = (mutationsList, observer) => {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
             for (const node of mutation.addedNodes) {
                 if (node.nodeType === Node.ELEMENT_NODE && node.tagName.toLowerCase() === 'ytd-rich-shelf-renderer' && node.hasAttribute('is-shorts')) {
-                    console.log("Removing YouTube Shorts shelf")
                     node.remove();
                     continue;
                 }
@@ -20,7 +19,6 @@ const observerCallback = (mutationsList, observer) => {
                     ) && 
                     node.firstElementChild?.getAttribute('title') === 'Shorts'
                 ) {
-                    console.log("Removing Shorts sidebar entry")
                     node.remove();
                     continue;
                 }
